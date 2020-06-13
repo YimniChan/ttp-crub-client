@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AddStudentsFormView = (props) => {
+const AddStudentFormView = (props) => {
   return (
     <div>
       <form onSubmit={props.handleSubmit}>
@@ -47,13 +47,14 @@ const AddStudentsFormView = (props) => {
   );
 };
 
-AddStudentsFormView.propTypes = {
+AddStudentFormView.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   firstname: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
   gpa: PropTypes.number.isRequired,
+  email: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
 };
 
-export default AddStudentsFormView;
+export default AddStudentFormView;

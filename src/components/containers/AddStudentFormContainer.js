@@ -32,7 +32,7 @@ class AddStudentFormContainer extends Component {
       <>
         {/* Can potentially be extracted into its own ErrorMessage component */}
         {this.state.isValidName ? "" : this.state.errors.name}
-        <AddStudentsFormView
+        <AddStudentFormView
           firstname={this.state.firstname}
           lastname={this.state.lastname}
           gpa={this.state.gpa}
