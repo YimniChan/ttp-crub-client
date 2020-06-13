@@ -7,6 +7,7 @@ import {
   EditCampusFormContainer,
 } from "../containers";
 
+//add student container
 const RoutesView = () => {
   return (
     <Switch>
@@ -19,6 +20,7 @@ const RoutesView = () => {
         path="/campuses/:id/edit"
         component={EditCampusFormContainer}
       />
+      
     </Switch>
   );
 };
