@@ -15,7 +15,7 @@ const AllStudentsView = (props) => {
           <Link to={`/students/${students.id}`}>
           </Link>
           <img src={students.imageUrl} width="200px" alt={students.name} />
-           <p>{students.firstName}</p>
+           <p>{students.firstName}+,+{students.lastName}</p>
           <p>{students.campusId.name} </p>
         </div>
       ))}

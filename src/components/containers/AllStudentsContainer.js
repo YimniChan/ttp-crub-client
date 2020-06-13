@@ -11,7 +11,7 @@ class AllStudentsContainer extends Component {
   }
 
   handleDelete = (id) => {
-    this.props.deleteStudents(id);
+    this.props.deleteStudent(id);
   };
 
   render() {
@@ -37,7 +37,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchAllStudents: () => dispatch(fetchAllStudentsThunk()),
-    deleteStudents: (id) => dispatch(deleteStudentsThunk(id)),
+//   deleteStudent: (id) => dispatch(deleteStudentThunk(id)),
   };
 };
 
@@ -45,7 +45,7 @@ const mapDispatch = (dispatch) => {
 AllStudentsContainer.propTypes = {
   allStudents: PropTypes.array.isRequired,
   fetchAllStudents: PropTypes.func.isRequired,
-  deleteStudents: PropTypes.func.isRequired,
+  deleteStudent: PropTypes.func.isRequired,
 };
 
 // Export our store-connected container by default;

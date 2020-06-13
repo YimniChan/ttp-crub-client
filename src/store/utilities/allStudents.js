@@ -5,9 +5,9 @@ import axios from "axios";
 
 // ACTION TYPES;
 const FETCH_ALL_STUDENTS = "FETCH_ALL_STUDENTS";
-const ADD_STUDENTS = "ADD_STUDENTS";
-const EDIT_STUDENTS = "EDIT_STUDENTS";
-const DELETE_STUDENTS = "DELETE_STUDENTS";
+const ADD_STUDENT = "ADD_STUDENT";
+const EDIT_STUDENT = "EDIT_STUDENT";
+const DELETE_STUDENT = "DELETE_STUDENT";
 
 // ACTION CREATORS;
 const fetchAllStudents = (students) => {
@@ -17,21 +17,21 @@ const fetchAllStudents = (students) => {
   };
 };
 
-const addStudents = (students) => {
+const addStudent = (student) => {
   return {
-    type: ADD_STUDENTS,
-    payload: students,
+    type: ADD_STUDENT,
+    payload: student,
   };
 };
 
-const editStudents = (students) => {
+const editStudent = (student) => {
   return {
     type: EDIT_STUDENTS,
-    payload: students,
+    payload: student,
   };
 };
 
-const deleteStudents = (id) => {
+const deleteStudent = (id) => {
   return {
     type:DELETE_STUDENTS,
     payload: id,
@@ -49,26 +49,26 @@ export const fetchAllStudentsThunk = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const addStudentsThunk = (students, ownProps) => (dispatch) => {
+export const addStudentThunk = (student, ownProps) => (dispatch) => {
   return axios
-    .post("/api/students", students)
+    .post("/api/students", student)
     .then((res) => res.data)
-    .then((newStudents) => {
-      dispatch(addStudents(newStudents));
-      ownProps.history.push(`/students/${newStudents.id}`);
+    .then((newStudent) => {
+      dispatch(addStudents(newStudent));
+      ownProps.history.push(`/students/${newStudent.id}`);
     })
     .catch((err) => console.log(err));
 };
 
-export const editStudentsThunk = (id, students) => (dispatch) => {
+export const editStudentThunk = (id, student) => (dispatch) => {
   return axios
-    .put(`/api/students/${id}`, students)
+    .put(`/api/students/${id}`, student)
     .then((res) => res.data)
-    .then((updatedStudents) => dispatch(editStudents(updatedStudents)))
+    .then((updatedStudent) => dispatch(editStudent(updatedStudent)))
     .catch((err) => console.log(err));
 };
 
-export const deleteStudentsThunk = (id) => (dispatch) => {
+export const deleteStudentThunk = (id) => (dispatch) => {
   return axios
     .delete(`/api/students/${id}`)
     .then((res) => res.data)
@@ -81,13 +81,13 @@ const reducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_ALL_STUDENTS:
       return action.payload;
-    case ADD_STUDENTS:
+    case ADD_STUDENT:
       return [...state, action.payload];
-    case EDIT_STUDENTS:
+    case EDIT_STUDENT:
       return [...state, action.payload];
-    case DELETE_STUDENTS:
+    case DELETE_STUDENT:
       console.log(action.payload);
-      return state.filter((students) => students.id !== action.payload);
+      return state.filter((student) => student.id !== action.payload);
     default:
       return state;
   }
