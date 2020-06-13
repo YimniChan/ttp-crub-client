@@ -33,10 +33,11 @@ class AddStudentFormContainer extends Component {
   validateEmail = () => {
     const { email } = this.state;
     let errors = { ...this.state.errors };
+    const re = /\S+@\S+\.\S+/;
     // set a valid boolean to true
     let isValidEmail = true;
     // check if the value is valid
-    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))) {
+    if (!re.test(email)) {
       // if not, set the value to false and add error message
       isValidEmail = false;
       errors.email = "Invalid email";

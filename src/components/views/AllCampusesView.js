@@ -10,6 +10,8 @@ const AllCampusesView = (props) => {
 
   return (
     <div className="all-campuses">
+      <h2>All Campuses</h2> 
+      <button onClick={() => props.handleAdd()}>Add campus</button>
       {props.allCampuses.map((campus) => (
         <div key={campus.id}>
           <Link to={`/campuses/${campus.id}`}>

@@ -13,6 +13,9 @@ class StudentContainer extends Component {
     this.props.fetchStudent(this.props.match.params.id);
   }
 
+//add handle events
+
+
   render() {
     return <CampusView student={this.props.student} />;
   }
