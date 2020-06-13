@@ -5,7 +5,7 @@ const FETCH_STUDENT = "FETCH_STUDENT";
 
 // Action Creators
 
-const fetchtudent = (student) => {
+const fetchStudent = (student) => {
   return {
     type: FETCH_STUDENT,
     payload: student,
