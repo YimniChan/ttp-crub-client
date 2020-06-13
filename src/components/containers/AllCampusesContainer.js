@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchAllCampusesThunk, deleteCampusThunk } from "../../thunks";
+import { fetchAllCampusesThunk, addCampusThunk, deleteCampusThunk } from "../../thunks";
 import { AllCampusesView } from "../views";
 
 // Smart container;
@@ -41,6 +41,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
+    addCampus:() => dispatch(addCampusThunk()),
     deleteCampus: (id) => dispatch(deleteCampusThunk(id)),
   };
 };

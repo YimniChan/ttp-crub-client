@@ -38,7 +38,7 @@ class EditStudentFormContainer extends Component {
     return (
       <EditStudentFormView
         firstname={this.state.firstname}
-        address={this.state. lastname}
+        lastname={this.state.lastname}
         email={this.state.email}
         gpa={this.state.gpa}
         imageUrl={this.state.imageUrl}
