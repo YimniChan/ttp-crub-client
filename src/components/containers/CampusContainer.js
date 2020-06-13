@@ -8,7 +8,12 @@ class CampusContainer extends Component {
   // constructor(props) {
   //   super(props);
   // }
-
+  handleAdd = (id) => {
+    this.props.addStudent(id);
+  };
+  handleDelete = (id) => {
+    this.props.deleteStudent(id);
+  };
   componentDidMount() {
     this.props.fetchCampus(this.props.match.params.id);
   }

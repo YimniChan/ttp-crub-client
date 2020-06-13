@@ -36,7 +36,7 @@ class AddStudentFormContainer extends Component {
     // set a valid boolean to true
     let isValidEmail = true;
     // check if the value is valid
-    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.tar.value))) {
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))) {
       // if not, set the value to false and add error message
       isValidEmail = false;
       errors.email = "Invalid email";
@@ -45,7 +45,7 @@ class AddStudentFormContainer extends Component {
     if (isValidEmail) {
       errors.email = "valid email";
     }
-    this.setState({ isValidName, errors });
+    this.setState({ isValidEmail, errors });
   };
 
   handleSubmit = (e) => {

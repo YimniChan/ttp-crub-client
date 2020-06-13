@@ -3,4 +3,4 @@ export * from "../store/utilities/allCampuses";
 export * from "../store/utilities/campus";
 
 export * from "../store/utilities/allStudents";
-export * from "../store/utilities/students";
+export * from "../store/utilities/student";

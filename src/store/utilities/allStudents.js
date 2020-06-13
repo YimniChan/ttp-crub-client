@@ -26,14 +26,14 @@ const addStudent = (student) => {
 
 const editStudent = (student) => {
   return {
-    type: EDIT_STUDENTS,
+    type: EDIT_STUDENT,
     payload: student,
   };
 };
 
 const deleteStudent = (id) => {
   return {
-    type:DELETE_STUDENTS,
+    type:DELETE_STUDENT,
     payload: id,
   };
 };
@@ -54,7 +54,7 @@ export const addStudentThunk = (student, ownProps) => (dispatch) => {
     .post("/api/students", student)
     .then((res) => res.data)
     .then((newStudent) => {
-      dispatch(addStudents(newStudent));
+      dispatch(addStudent(newStudent));
       ownProps.history.push(`/students/${newStudent.id}`);
     })
     .catch((err) => console.log(err));
