@@ -8,8 +8,8 @@ class EditStudentFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        firstname: "",
-        lastname: "",
+        firstName: "",
+        lastName: "",
         email: "",
         gpa: 0,
         imageUrl: "",
