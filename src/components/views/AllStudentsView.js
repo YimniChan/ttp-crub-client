@@ -13,12 +13,12 @@ const AllStudentsView = (props) => {
       {props.allStudents.map((student) => (
         <div key={student.id}>
           <Link to={`/students/${student.id}`}>
-          </Link>
+            {student.firstName}, {student.lastName}
+          </Link><br/>
           <img src={student.imageUrl} width="200px" alt={student.name} />
-           <p>{student.firstName}, {student.lastName}<br/>
-           Email:{student.email}<br/>
-           GPA: {student.gpa} <br/>
-           College: {student.campus.name} </p>
+           <p>Email:{student.email}<br/>
+              GPA: {student.gpa} <br/>
+              College: {student.campus.name} </p>
         </div>
       ))}
     </div>

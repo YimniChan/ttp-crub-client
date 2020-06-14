@@ -10,9 +10,9 @@ class AllCampusesContainer extends Component {
     this.props.fetchAllCampuses();
   }
 
-  handleAdd = () => {
-    this.props.addCampus();
-  };
+  // handleAdd = () => {
+    
+  // };
   
   handleDelete = (id) => {
     this.props.deleteCampus(id);
