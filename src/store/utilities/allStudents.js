@@ -8,14 +8,17 @@ const FETCH_ALL_STUDENTS = "FETCH_ALL_STUDENTS";
 const ADD_STUDENT = "ADD_STUDENT";
 const EDIT_STUDENT = "EDIT_STUDENT";
 const DELETE_STUDENT = "DELETE_STUDENT";
+const ENROLL_STUDENT = "ENROLL_STUDENT";
 
-// ACTION CREATORS;
+// ACTION CREATORS
+
 const fetchAllStudents = (students) => {
   return {
     type: FETCH_ALL_STUDENTS,
     payload: students,
   };
 };
+
 
 const addStudent = (student) => {
   return {
@@ -27,6 +30,11 @@ const addStudent = (student) => {
 const editStudent = (student) => {
   return {
     type: EDIT_STUDENT,
+  };
+};
+const enrollStudent = (student) => {
+  return {
+    type: ENROLL_STUDENT,
     payload: student,
   };
 };
@@ -75,7 +83,15 @@ export const deleteStudentThunk = (id) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-// REDUCER;
+export const enrollStudentThunk = (campusId, studentId) => (dispatch) => {
+  return axios
+    .put(`/api/students/${studentId}`, { campusId: campusId })
+    .then((res) => res.data)
+    .then((student) => dispatch(enrollStudent(student)))
+    .catch((err) => console.log(err));
+};
+
+// REDUCER
 const reducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_ALL_STUDENTS:
@@ -89,6 +105,11 @@ const reducer = (state = [], action) => {
     case DELETE_STUDENT:
       console.log(action.payload);
       return state.filter((student) => student.id !== action.payload);
+    case ENROLL_STUDENT:
+      return state.map((student) =>
+        student.id === action.payload.id ? action.payload : student
+      );
+
     default:
       return state;
   }
