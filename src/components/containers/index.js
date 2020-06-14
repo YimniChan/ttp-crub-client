@@ -10,3 +10,4 @@ export { default as AddStudentFormContainer } from "./AddStudentFormContainer";
 export { default as EditStudentFormContainer } from "./EditStudentFormContainer";
 
 export { default as NavBarContainer } from "./NavBarContainer";
+export { default as StudentNameListContainer } from "./StudentNameListContainer";

@@ -1,34 +1,29 @@
 import React from "react";
+import "./styles/CampusView.css";
+import { Link } from "react-router-dom";
+import { StudentNameListContainer } from "../containers";
 
 const CampusView = (props) => {
-  let studentDisplay;
-  if (props.campus.students) {
-    studentDisplay = (
-      <div>
-        <p>{props.campus.students.length} Students</p>
-        {props.campus.students.map((student) => (
-          <div key={student.id}>{student.firstName}</div>
-        ))}
-      </div>
-    );
-  } else {
-    studentDisplay = <p>There are no students enrolled</p>;
-  }
-
   return (
     <>
       <img src={props.campus.imageUrl} alt={props.campus.name} />
-      <h2>{props.campus.name}</h2>
-      <h3>{props.campus.address}</h3>
+      <h3>{props.campus.name}</h3>
+      <h4>{props.campus.address}</h4>
       <p>{props.campus.description}</p> 
+
+      <StudentNameListContainer students={props.campus.students} />
       <Link className="edit-link" to={`/campuses/${props.campus.id}/edit`}>
         Edit
-      </Link>   
-      <button onClick={() => props.handleAdd()}>ADD STUDENT</button> 
-      <button onClick={() => props.handleDelete()}>REMOVE STUDENT</button> 
-      {studentDisplay}
+      </Link>
+      <button onClick={() => props.handleDelete(props.campus.id)}>
+        Delete
+      </button>
+  
+
     </>
   );
 };
+// <button onClick={() => props.handleAdd()}>ADD STUDENT</button> 
+// <button onClick={() => props.handleDelete()}>REMOVE STUDENT</button> 
 
 export default CampusView;

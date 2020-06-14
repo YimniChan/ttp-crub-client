@@ -1,26 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCampusThunk } from "../../thunks";
+import { fetchCampusThunk, deleteCampusThunk } from "../../thunks";
 
 import { CampusView } from "../views";
 
 class CampusContainer extends Component {
+
   // constructor(props) {
   //   super(props);
   // }
-  handleAdd = () => {
-    this.props.addStudent();
-  };
-  handleDelete = (id) => {
-    this.props.deleteStudent();
-  };
-  componentDidMount
-  () {
+  // handleAdd = () => {
+  //   this.props.addStudent();
+  // };
+  // handleDelete = (id) => {
+  //   this.props.deleteStudent();
+  // };
+
+  componentDidMount() {
     this.props.fetchCampus(this.props.match.params.id);
   }
 
+  handleDelete = (id) => {
+    this.props.deleteCampus(id);
+    this.props.history.push("/campuses");
+  };
+
   render() {
-    return <CampusView campus={this.props.campus} />;
+    return (
+      <CampusView campus={this.props.campus} handleDelete={this.handleDelete} />
+    );
   }
 }
 

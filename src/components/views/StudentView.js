@@ -22,7 +22,7 @@ const StudentView = (props) => {
       <h3>{props.student.firstname},{props.student.lastname}</h3>
       <p>{props.student.email}</p>
       <p>{props.student.gpa}</p>
-      {studentDisplay//drowmeun for }
+      {studentDisplay/*drowmeun for*/ }
     </>
   );
 };
