@@ -1,0 +1,9 @@
+ul.students,
+ul.campuses {
+  list-style-type: none;
+}
+
+li.student-name a,
+li.campuse-name a {
+  color: black;
+}

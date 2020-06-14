@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { CampusNameListContainer } from "../containers";
 
 const StudentView = (props) => {
+
   return (
     <>
       <h3>{props.student.firstName},{props.student.lastName}</h3>
@@ -21,5 +22,4 @@ const StudentView = (props) => {
     </>
   );
 };
-
 export default StudentView;
