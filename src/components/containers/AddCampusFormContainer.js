@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { AddCampusFormView } from "../views";
-import { /*fetchCampusThunk,*/addCampusThunk } from "../../thunks";
-
+import { addCampusThunk } from "../../thunks";
+/*fetchCampusThunk,*/
 class AddCampusFormContainer extends Component {
   constructor(props) {
     super(props);

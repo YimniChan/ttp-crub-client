@@ -10,7 +10,7 @@ const AddStudentFormView = (props) => {
           First Name:{" "}
           <input
             value={props.firstName}
-            name="firstname"
+            name="firstName"
             onChange={props.handleChange}
             required
           ></input>
@@ -19,7 +19,7 @@ const AddStudentFormView = (props) => {
           Last Name:{" "}
           <input
             value={props.lastName}
-            name="lastname"
+            name="lastName"
             onChange={props.handleChange}
             required
           ></input>
@@ -29,6 +29,7 @@ const AddStudentFormView = (props) => {
           <input
             value={props.email}
             name="email"
+            /*pattern="/\S+@\S+\.\S+/"*/
             onChange={props.handleChange}
             required
           ></input>
@@ -38,8 +39,8 @@ const AddStudentFormView = (props) => {
           <input
             value={props.gpa}
             name="gpa"
-            min={0.0}
-            max={4.0}
+            min={0.00}
+            max={4.00}
             step="any"
             onChange={props.handleChange}
             required

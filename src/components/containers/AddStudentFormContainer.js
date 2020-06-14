@@ -13,52 +13,70 @@ class AddStudentFormContainer extends Component {
       email: "",
       gpa: 0,
       imageUrl: "",
-      isValidEmail: false,
-     // isValidGpa: false,
+      //isValidEmail: false,
+      isValidName: false,
       errors: {},
     };
   }
 
   handleChange = (e) => {
-    if (e.target.name === "email") {
-      this.setState({ email: e.target.value }, this.validateEmail);
-    } 
-    else {
+    if (e.target.name === "firstName") {
+      this.setState({ firstName: e.target.value }, this.validateName);
+    } else {
       this.setState({
         [e.target.name]: e.target.value,
       });
     }
   };
-  // check email
-  validateEmail = () => {
-    const { email } = this.state;
-    let errors = { ...this.state.errors };
-    const re = /\S+@\S+\.\S+/;
-    // set a valid boolean to true
-    let isValidEmail = true;
-    // check if the value is valid
-    if (!re.test(email)) {
-      // if not, set the value to false and add error message
-      isValidEmail = false;
-      errors.email = "Invalid email";
-    }
-    // setstate with isValidName
-    if (isValidEmail) {
-      errors.email = "valid email";
-    }
-    this.setState({ isValidEmail, errors });
-  };
+//check name
+validateName = () => {
+  const { firstName } = this.state;
+  let errors = { ...this.state.errors };
+  // set a valid boolean to true
+  let isValidName = true;
+  // check if the value is valid
+  if (firstName.length < 2) {
+    // if not, set the value to false and add error message
+    isValidName = false;
+    errors.name = "Invalid firstName";
+  }
+  // setstate with isValidName
+  if (isValidName) {
+    errors.name = "valid firstName";
+  }
+  this.setState({ isValidName, errors });
+};
+
+  // // check email
+  // validateEmail = () => {
+  //   const { email } = this.state;
+  //   let errors = { ...this.state.errors };
+  //   const re = /\S+@\S+\.\S+/;
+  //   // set a valid boolean to true
+  //   let isValidEmail = true;
+  //   // check if the value is valid
+  //   if (!re.test(email)) {
+  //     // if not, set the value to false and add error message
+  //     isValidEmail = false;
+  //     errors.email = "Invalid email";
+  //   }
+  //   // setstate with isValidName
+  //   if (isValidEmail) {
+  //     errors.email = "valid email";
+  //   }
+  //   this.setState({ isValidEmail, errors });
+  // };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.isValidEmail)  this.props.addStudent(this.state);
+    if (this.state.isValidName)  this.props.addStudent(this.firstName);
   };
 
   render() {
     return (
       <>
         {/* Can potentially be extracted into its own ErrorMessage component */}
-        {this.state.isValidEmail ? "" : this.state.errors.email}
+        {this.state.isValidName ? "" : this.state.errors.name}
         <AddStudentFormView
           firstName={this.state.firstName}
           lastName={this.state.lastName}

@@ -20,13 +20,15 @@ const StudentView = (props) => {
   // }
 
   //  {studentDisplay/*drowmeun for*/ } in return
-
+  
+//line 30 need to fix
   return (
     <>
       <img src={props.student.imageUrl} alt={props.student.name} />
       <h3>{props.student.firstName},{props.student.lastName}</h3>
       <p>Email: {props.student.email}<br/>
-          GPA: {props.student.gpa}</p>
+          GPA: {props.student.gpa}<br/>
+          College: {props.student.campus} </p>
       <Link className="edit-link" to={`/students/${props.student.id}/edit`}>
         Edit
       </Link>
