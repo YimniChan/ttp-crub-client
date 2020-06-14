@@ -9,6 +9,8 @@ const AllStudentsView = (props) => {
     return <div className="all-students">There are no student enrolled.</div>;
   }
 
+
+  
   return (
     <div className="all-students">
       <h2>All Students</h2> 
@@ -30,6 +32,7 @@ const AllStudentsView = (props) => {
     </div>
   );
 };
+
 AllStudentsView.propTypes = {
 allStudents: PropTypes.array.isRequired,
 };

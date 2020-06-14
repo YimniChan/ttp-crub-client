@@ -18,17 +18,17 @@ const StudentView = (props) => {
   // } else {
   //   studentDisplay = <p>There are no students enrolled</p>;
   // }
-
   //  {studentDisplay/*drowmeun for*/ } in return
   
-//line 30 need to fix
+  console.log("student-record"+this.props.student);
+//line 31 need to fix
   return (
     <>
-      <img src={props.student.imageUrl} alt={props.student.name} />
       <h3>{props.student.firstName},{props.student.lastName}</h3>
+      <img src={props.student.imageUrl} alt={props.student.name} />
       <p>Email: {props.student.email}<br/>
           GPA: {props.student.gpa}<br/>
-          College: {props.student.campus} </p>
+          College: {props.student.campus.name} </p>
       <Link className="edit-link" to={`/students/${props.student.id}/edit`}>
         Edit
       </Link>

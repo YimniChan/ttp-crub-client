@@ -29,7 +29,6 @@ const AddStudentFormView = (props) => {
           <input
             value={props.email}
             name="email"
-            /*pattern="/\S+@\S+\.\S+/"*/
             onChange={props.handleChange}
             required
           ></input>

@@ -69,7 +69,7 @@ validateName = () => {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.isValidName)  this.props.addStudent(this.firstName);
+    if (this.state.isValidName) this.props.addStudent(this.state);
   };
 
   render() {
@@ -93,7 +93,7 @@ validateName = () => {
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    addStudents: (student) => dispatch(addStudentThunk(student, ownProps)),
+    addStudent: (student) => dispatch(addStudentThunk(student, ownProps)),
   };
 };
 

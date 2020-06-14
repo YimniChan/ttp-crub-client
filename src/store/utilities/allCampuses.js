@@ -42,8 +42,7 @@ const deleteCampus = (id) => {
 export const fetchAllCampusesThunk = () => (dispatch) => {
   return axios
     .get("/api/campuses")
-    .then((res) =>res.data
-    ) 
+    .then((res) =>res.data) 
     .then((campuses) => dispatch(fetchAllCampuses(campuses)),
      console.log("test"))
     .catch((err) => console.log(err));
