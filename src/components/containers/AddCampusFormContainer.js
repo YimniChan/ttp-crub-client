@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { AddCampusFormView } from "../views";
 import { addCampusThunk } from "../../thunks";
-
+/*fetchCampusThunk,*/
 class AddCampusFormContainer extends Component {
   constructor(props) {
     super(props);
@@ -69,6 +69,7 @@ class AddCampusFormContainer extends Component {
   }
 }
 
+//mapState
 const mapDispatch = (dispatch, ownProps) => {
   return {
     addCampus: (campus) => dispatch(addCampusThunk(campus, ownProps)),
