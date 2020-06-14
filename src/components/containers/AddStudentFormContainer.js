@@ -8,13 +8,13 @@ class AddStudentFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstname: "",
-      lastname: "",
+      firstName: "",
+      lastName: "",
       email: "",
       gpa: 0,
       imageUrl: "",
       isValidEmail: false,
-      isValidGpa: false,
+     // isValidGpa: false,
       errors: {},
     };
   }
@@ -51,17 +51,17 @@ class AddStudentFormContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-     this.props.addStudent(this.state);
+    if (this.state.isValidEmail)  this.props.addStudent(this.state);
   };
 
   render() {
     return (
       <>
         {/* Can potentially be extracted into its own ErrorMessage component */}
-        {this.state.isValidName ? "" : this.state.errors.name}
+        {this.state.isValidEmail ? "" : this.state.errors.email}
         <AddStudentFormView
-          firstname={this.state.firstname}
-          lastname={this.state.lastname}
+          firstName={this.state.firstName}
+          lastName={this.state.lastName}
           email={this.state.email}
           gpa={this.state.gpa}
           imageUrl={this.state.imageUrl}

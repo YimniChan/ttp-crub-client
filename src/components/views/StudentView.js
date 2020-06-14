@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/CampusView.css";
 import { Link } from "react-router-dom";
 
+
 const StudentView = (props) => {
   // //display college 
   // let studentDisplay;
@@ -23,10 +24,9 @@ const StudentView = (props) => {
   return (
     <>
       <img src={props.student.imageUrl} alt={props.student.name} />
-      <h3>{props.student.firstname},{props.student.lastname}</h3>
-      <p>{props.student.email}</p>
-      <p>{props.student.gpa}</p>
-
+      <h3>{props.student.firstName},{props.student.lastName}</h3>
+      <p>Email: {props.student.email}<br/>
+          GPA: {props.student.gpa}</p>
       <Link className="edit-link" to={`/students/${props.student.id}/edit`}>
         Edit
       </Link>

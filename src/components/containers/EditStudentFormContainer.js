@@ -38,8 +38,8 @@ class EditStudentFormContainer extends Component {
   render() {
     return (
       <EditStudentFormView
-        firstname={this.state.firstname}
-        lastname={this.state.lastname}
+        firstName={this.state.firstName}
+        lastName={this.state.lastName}
         email={this.state.email}
         gpa={this.state.gpa}
         imageUrl={this.state.imageUrl}
