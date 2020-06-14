@@ -1,7 +1,6 @@
 import React from "react";
-import "./styles/StudentNameListView.css";
+import "./styles/NameListView.css";
 import { Link } from "react-router-dom";
-
 
 const StudentNameListView = (props) => {
   console.log(props);
