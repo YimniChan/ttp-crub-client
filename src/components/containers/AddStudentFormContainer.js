@@ -11,7 +11,7 @@ class AddStudentFormContainer extends Component {
       firstname: "",
       lastname: "",
       email: "",
-      gpa: "",
+      gpa: 0,
       imageUrl: "",
       isValidEmail: false,
       isValidGpa: false,

@@ -1,17 +1,9 @@
 .all-campuses {
   color: black;
 }
-<<<<<<< HEAD
-.add-campuses {
- border: 2px;
+
+.add-campus {
+ border: 2px solid teal;
  padding: 10px;
  margin: 5px;
 }
-=======
-.add-campus {
-  border: 2px solid teal;
-  padding: 10px;
-  margin: 20px;
-  background-color: white;
-}
->>>>>>> 00d77b94338a4b8dae2bfc5bc180b162f836f7d7

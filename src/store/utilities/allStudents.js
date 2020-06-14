@@ -42,8 +42,7 @@ const deleteStudent = (id) => {
 export const fetchAllStudentsThunk = () => (dispatch) => {
   return axios
     .get("/api/students")
-    .then((res) =>res.data
-    ) 
+    .then((res) =>res.data) 
     .then((students) => dispatch(fetchAllStudents(students)),
      console.log("test"))
     .catch((err) => console.log(err));
@@ -83,8 +82,10 @@ const reducer = (state = [], action) => {
       return action.payload;
     case ADD_STUDENT:
       return [...state, action.payload];
-    case EDIT_STUDENT:
-      return [...state, action.payload];
+    case EDIT_CAMPUS:
+      return state.map((student) =>
+        student.id === action.payload.id ? action.payload : student
+    );
     case DELETE_STUDENT:
       console.log(action.payload);
       return state.filter((student) => student.id !== action.payload);

@@ -23,6 +23,7 @@ const CampusView = (props) => {
     </>
   );
 };
+//addstodent option, form w.dropdowm meun
 // <button onClick={() => props.handleAdd()}>ADD STUDENT</button> 
 // <button onClick={() => props.handleDelete()}>REMOVE STUDENT</button> 
 
