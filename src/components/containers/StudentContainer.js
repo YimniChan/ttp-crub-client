@@ -10,6 +10,7 @@ class StudentContainer extends Component {
 
   componentDidMount() {
     this.props.fetchStudent(this.props.match.params.id);
+
   }
 
 //add handle events
@@ -19,6 +20,7 @@ class StudentContainer extends Component {
     };
 
   render() {
+    console.log("st-co "+ this.props.student.campus);
     return <StudentView student={this.props.student} />;
   }
 }

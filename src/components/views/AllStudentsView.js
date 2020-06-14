@@ -9,7 +9,7 @@ const AllStudentsView = (props) => {
     return <div className="all-students">There are no student enrolled.</div>;
   }
 
-
+//College: {student.campus.name}  in line 28
   
   return (
     <div className="all-students">
@@ -25,7 +25,7 @@ const AllStudentsView = (props) => {
           <img src={student.imageUrl} width="200px" alt={student.firstName} />
            <p>Email:{student.email}<br/>
               GPA: {student.gpa} <br/>
-              College: {student.campus.name} </p>
+              College: {student.campus.name}</p>
              <button onClick={() => props.handleDelete(student.id)}>Delete</button>
         </div>
       ))}

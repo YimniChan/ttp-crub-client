@@ -11,3 +11,4 @@ export { default as EditStudentFormView } from "./EditStudentFormView";
 
 export { default as NavBarView } from "./NavBarView";
 export { default as StudentNameListView } from "./StudentNameListView";
+export { default as CampusNameListView } from "./CampusNameListView";
