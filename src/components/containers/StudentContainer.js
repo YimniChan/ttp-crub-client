@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchStudentThunk,, deleteStudentThunk } from "../../thunks";
-
-import { CampusView } from "../views";
+import { fetchStudentThunk, deleteStudentThunk } from "../../thunks";
+import { StudentView } from "../views";
 
 class StudentContainer extends Component {
   // constructor(props) {
@@ -35,6 +34,7 @@ const mapDispatch = (dispatch) => {
   return {
     fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
     deleteStudent: (id) => dispatch(deleteStudentThunk(id)),
+  };
 };
 
 export default connect(mapState, mapDispatch)(StudentContainer);

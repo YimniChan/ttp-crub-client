@@ -7,10 +7,10 @@ const CampusView = (props) => {
   return (
     <>
       <img src={props.campus.imageUrl} alt={props.campus.name} />
-      <h3>{props.campus.name}</h3>
-      <h4>{props.campus.address}</h4>
-      <p>{props.campus.description}</p> 
-
+      <p><h3>{props.campus.name}</h3>
+      {props.campus.address}<br/>
+          {props.campus.description}
+      </p> 
       <StudentNameListContainer students={props.campus.students} />
       <Link className="edit-link" to={`/campuses/${props.campus.id}/edit`}>
         Edit
