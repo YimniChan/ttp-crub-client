@@ -12,9 +12,9 @@ const AllCampusesView = (props) => {
     <div className="all-campuses">
 
       <h2>All Campuses</h2> 
-      <Link to="/campusues/new" className="add-campus">
+      <Link to="/campuses/new" className="add-campus">
         Add New campus
-        </Link>
+      </Link>
       <div>
       {props.allCampuses.map((campus) => (
         <div key={campus.id}>

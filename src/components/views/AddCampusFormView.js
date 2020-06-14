@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 const AddCampusFormView = (props) => {
   return (
     <div>
+      <h3>New Campus Information</h3>
       <form onSubmit={props.handleSubmit}>
         <div>
           Name:{" "}
