@@ -1,8 +1,9 @@
 import React from "react";
 
 const StudentView = (props) => {
+  //display college 
   let studentDisplay;
-  if (props.campus.students) {
+  if (props.student.students) {
     studentDisplay = (
       <div>
         <p>{props.campus.students.length} Students</p>
@@ -17,12 +18,11 @@ const StudentView = (props) => {
 
   return (
     <>
-      <img src={props.campus.imageUrl} alt={props.campus.name} />
-      <h1>{props.campus.name}</h1>
-      <h3>{props.campus.address}</h3>
-
-      <p>{props.campus.description}</p>
-      {studentDisplay}
+      <img src={props.student.imageUrl} alt={props.student.name} />
+      <h3>{props.student.firstname},{props.student.lastname}</h3>
+      <p>{props.student.email}</p>
+      <p>{props.student.gpa}</p>
+      {studentDisplay//drowmeun for }
     </>
   );
 };

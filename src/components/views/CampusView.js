@@ -20,7 +20,10 @@ const CampusView = (props) => {
       <img src={props.campus.imageUrl} alt={props.campus.name} />
       <h2>{props.campus.name}</h2>
       <h3>{props.campus.address}</h3>
-      <p>{props.campus.description}</p>    
+      <p>{props.campus.description}</p> 
+      <Link className="edit-link" to={`/campuses/${props.campus.id}/edit`}>
+        Edit
+      </Link>   
       <button onClick={() => props.handleAdd()}>ADD STUDENT</button> 
       <button onClick={() => props.handleDelete()}>REMOVE STUDENT</button> 
       {studentDisplay}
